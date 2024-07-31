@@ -12,13 +12,13 @@ def click_mouse():
 
 def on_press(key):
     global clicking
-    if key == key.shift:
+    if key == keyboard.Key.shift:
         clicking = True
         threading.Thread(target = click_mouse).start()
 
 def on_release(key):
     global clicking
-    if key == key.shift:
+    if key == keyboard.Key.shift:
         clicking = False
 
 with keyboard.Listener(on_press = on_press, on_release = on_release) as listener:
